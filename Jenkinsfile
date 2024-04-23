@@ -31,7 +31,7 @@ pipeline {
                 // Add post-build steps here
                  sh 'docker images'
                  script {
-                     docker.withRegistry('http://10.61.15.7:5000', 'Z3p5c2tvd3NraTpzaWVtYW5rbzEy') {
+                     docker.withRegistry('http://10.61.15.7:5000', 'kredki_repo') {
                      sh '/home/jenkins/send_to_repo3.sh'
                      }
                 }
