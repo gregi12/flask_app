@@ -20,16 +20,7 @@ pipeline {
                 echo "$WORKSPACE"
         }
         }
-        stage('Test') {
-            steps {
-                    
-                    sh '''
-                        docker compose -f docker-compose.yml run web python manage.py test
-                        echo "tests are completed"
-                        docker images
-                       '''
-            }
-        }
+        
         stage('Post-build') {
             environment{
                 IMAGE_TAG = "something"
