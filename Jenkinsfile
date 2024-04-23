@@ -30,6 +30,7 @@ pipeline {
             steps {
                 // Add post-build steps here
                  sh 'docker images'
+                 sh 'docker login'
                  sh '/home/jenkins/send_to_repo3.sh'
                         
         }
