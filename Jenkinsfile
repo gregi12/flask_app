@@ -23,7 +23,7 @@ pipeline {
         
         stage('Post-build') {
             environment{
-                IMAGE_TAG = "something"
+                IMAGE_TAG = "somethingElse"
                 REPO_HOST = '10.61.15.7:5000'
                 }
             
