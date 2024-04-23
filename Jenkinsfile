@@ -30,9 +30,9 @@ pipeline {
             steps {
                 // Add post-build steps here
                  sh 'docker images'
-                 sh 'docker login 10.61.15.7:5000'
+                 docker.withRegistry('http://10.61.15.7:5000', 'Z3p5c2tvd3NraTpzaWVtYW5rbzEy') {
                  sh '/home/jenkins/send_to_repo3.sh'
-                        
+                 }
         }
     
         
