@@ -43,6 +43,7 @@ pipeline {
         always{
            sh 'docker compose down --remove-orphans -v'
            sh 'docker compose ps'
+           sh 'docker system prune -a --volumes -f'
         }
         failure {
             mail to: 'staty1@o2.pl',
