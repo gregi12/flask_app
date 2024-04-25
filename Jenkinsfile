@@ -19,7 +19,7 @@ pipeline {
                 sh '''
                     docker compose up -d --build
                     
-                    docker exec -i web echo "1.13.3" > /app_version.txt
+                    docker exec -i flask_app-web-1 echo "1.13.3" > /app_version.txt
                         '''
                 echo "$WORKSPACE"
         }
