@@ -16,7 +16,11 @@ pipeline {
         stage('Build') {
             steps {
                 // Run Docker Compose instead of checking out Git branch
-                sh 'docker compose up -d --build'
+                sh '''
+                    docker compose up -d --build
+                    
+                    docker exec -i web echo "1.13.3" > /app_version.txt
+                        '''
                 echo "$WORKSPACE"
         }
         }
