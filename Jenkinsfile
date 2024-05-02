@@ -18,8 +18,6 @@ pipeline {
                 // Run Docker Compose instead of checking out Git branch
                 sh '''
                     docker compose up -d --build
-                    
-                    docker exec -i flask_app-web-1 echo "1.13.3" > /app_version.txt
                         '''
                 echo "$WORKSPACE"
         }
